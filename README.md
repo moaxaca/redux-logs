@@ -1,4 +1,6 @@
-#Redux Logs
+# Redux Logs
+
+README in process leaving this information as a template.
 
 [![build status](https://img.shields.io/travis/reactjs/redux/master.svg?style=flat-square)](https://travis-ci.org/reactjs/redux)
 [![npm version](https://img.shields.io/npm/v/redux.svg?style=flat-square)](https://www.npmjs.com/package/redux)
