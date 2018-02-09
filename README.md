@@ -4,10 +4,8 @@ README in process leaving this information as a template.
 
 [![build status](https://img.shields.io/travis/reactjs/redux/master.svg?style=flat-square)](https://travis-ci.org/reactjs/redux)
 [![npm version](https://img.shields.io/npm/v/redux.svg?style=flat-square)](https://www.npmjs.com/package/redux)
-[![npm downloads](https://img.shields.io/npm/dm/redux.svg?style=flat-square)](https://www.npmjs.com/package/redux)
-[![redux channel on discord](https://img.shields.io/badge/discord-%23redux%20%40%20reactiflux-61dafb.svg?style=flat-square)](https://discord.gg/0ZcbPKXt5bZ6au5t)
-[![#rackt on freenode](https://img.shields.io/badge/irc-%23rackt%20%40%20freenode-61DAFB.svg?style=flat-square)](https://webchat.freenode.net/)
-[![Changelog #187](https://img.shields.io/badge/changelog-%23187-lightgrey.svg?style=flat-square)](https://changelog.com/187)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b93727bc7489c0a63e7b/maintainability)](https://codeclimate.com/github/moaxaca/redux-logs/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b93727bc7489c0a63e7b/test_coverage)](https://codeclimate.com/github/moaxaca/redux-logs/test_coverage)
 
 ## Installation
 
