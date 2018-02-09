@@ -1,0 +1,28 @@
+{
+  "private": false,
+  "name": "redux-logs",
+  "version": "1.0.0",
+  "description": "A redux logging library with crash and user behavior reporting. It allows for custom transporter adapters. ",
+  "author": "Matthew Oaxaca",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/tape.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ext .js, src test",
+    "version:patch": "npm --no-git-tag-version version patch",
+    "version:minor": "npm --no-git-tag-version version minor",
+    "version:major": "npm --no-git-tag-version version major",
+    "test": "tap test/*.js"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "redux": "^3.7.2"
+  }
+}
