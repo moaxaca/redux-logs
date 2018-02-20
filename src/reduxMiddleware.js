@@ -9,7 +9,7 @@ module.exports = (history, onError) => store => next => (action) => {
   } catch (e) {
     if (typeof onError === 'function') {
       onError(
-        history.getHistory(),
+        history.actions,
         store.getState(),
         () => history.flush(),
       );

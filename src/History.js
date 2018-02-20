@@ -2,24 +2,31 @@
  * History
  */
 class History {
-  constructor(size) {
-    this.history = [];
+  constructor(size, syncFn) {
+    this.actions = [];
     this.size = size;
+    this.syncOffset = 0;
+    this.syncFn = syncFn;
   }
 
-  getHistory() {
-    return this.history;
+  startSyncing(syncInterval) {
+    setInterval(this.sync.bind(this), syncInterval);
   }
 
-  add(event) {
-    this.history.unshift(event);
-    if (this.history.length > this.size) {
-      this.history = this.history.slice(0, this.size - 1);
+  async sync() {
+    const batch = this.actions;
+    await this.syncFn(batch);
+  }
+
+  add(action) {
+    this.actions.unshift(action);
+    if (this.actions.length > this.size) {
+      this.actions = this.actions.slice(0, this.size - 1);
     }
   }
 
   flush() {
-    this.history.length = 0;
+    this.actions.length = 0;
   }
 }
 

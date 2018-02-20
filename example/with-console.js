@@ -1,6 +1,4 @@
-'use strict';
-
-const { createStore, applyMiddleware } = require('redux');
+const { createStore, applyMiddleware } = require('redux'); // eslint-disable-line
 const {
   incrementAction,
   decrementAction,
@@ -9,6 +7,12 @@ const {
 } = require('./counter');
 const reduxLogs = require('../');
 
+const syncHistory = (batch) => {
+  console.groupCollapsed('History');
+  console.log('History:', batch);
+  console.groupEnd();
+};
+
 const logHistoryToConsole = (history, state) => {
   console.groupCollapsed('History & State');
   console.log('History:', history);
@@ -16,8 +20,9 @@ const logHistoryToConsole = (history, state) => {
   console.groupEnd();
 };
 
-const { getHistory, flushHistory, reduxLogsMiddleware } = reduxLogs({
+const { flushHistory, reduxLogsMiddleware } = reduxLogs({
   maxHistorySize: 10,
+  sync: syncHistory,
   onError: (history, state, flush) => {
     logHistoryToConsole(history, state);
     flush();
@@ -26,14 +31,11 @@ const { getHistory, flushHistory, reduxLogsMiddleware } = reduxLogs({
 
 const store = createStore(
   reducer,
-  applyMiddleware(
-    reduxLogsMiddleware
-  )
+  applyMiddleware(reduxLogsMiddleware),
 );
 
 store.dispatch(incrementAction());
 store.dispatch(incrementAction());
-logHistoryToConsole(getHistory(), store.getState());
 store.dispatch(incrementAction());
 flushHistory();
 store.dispatch(decrementAction());
